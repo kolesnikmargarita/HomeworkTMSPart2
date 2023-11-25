@@ -29,6 +29,30 @@
       <param-value>Ivan</param-value>
     </init-param>
   </servlet>
+  <servlet>
+    <servlet-name>htmlLoginServlet</servlet-name>
+    <servlet-class>by.kolesnik.program_1.homework2.HtmlLoginServlet</servlet-class>
+    <init-param>
+      <param-name>firstLogin</param-name>
+      <param-value>User1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>firstPassword</param-name>
+      <param-value>12345</param-value>
+    </init-param>
+    <init-param>
+      <param-name>secondLogin</param-name>
+      <param-value>User2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>secondPassword</param-name>
+      <param-value>6789</param-value>
+    </init-param>
+  </servlet>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>by.kolesnik.program_1.homework2.filters.LoginFilter</filter-class>
+  </filter>
 
   <servlet-mapping>
     <servlet-name>HelloWorldServlet</servlet-name>
@@ -42,5 +66,13 @@
     <servlet-name>NameServlet</servlet-name>
     <url-pattern>/names</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>htmlLoginServlet</servlet-name>
+    <url-pattern>/validation</url-pattern>
+  </servlet-mapping>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/time</url-pattern>
+  </filter-mapping>
 
 </web-app>
