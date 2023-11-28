@@ -1,8 +1,8 @@
 package by.kolesnik.program_1.homework2.filters;
 
 import jakarta.servlet.*;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -15,17 +15,17 @@ public class LoginFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
-        Cookie[] cookies = ((HttpServletRequest) req).getCookies();
-        boolean authorized = false;
-        if(cookies != null) {
-            for(Cookie cooki : cookies) {
-                if(cooki.getName().equals("session")) {
-                    if(cooki.getValue().equals("true")) {
-                        authorized = true;
-                    }
-                }
-            }
+        HttpSession session = ((HttpServletRequest) req).getSession(false);
+
+        boolean authorized;
+
+        if (session == null) {
+            authorized = false;
+        } else {
+            String authorizedAttribute = (String) session.getAttribute("authorized");
+            authorized = authorizedAttribute != null && authorizedAttribute.equals("true");
         }
+
         if(!authorized) {
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }

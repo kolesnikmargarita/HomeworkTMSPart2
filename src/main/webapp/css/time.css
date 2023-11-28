@@ -1,0 +1,17 @@
+.time{
+    font-size: 200px;
+    color: yellow;
+    width: 800px;
+    background-color: black;
+    margin-left: 300px;
+}
+
+.title{
+    color: aqua;
+    font-size: 100px;
+    text-align: center;
+}
+
+body{
+    background: linear-gradient(#2639fa, #c9d1ff);
+}

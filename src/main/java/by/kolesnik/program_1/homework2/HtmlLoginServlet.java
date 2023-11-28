@@ -1,10 +1,6 @@
 package by.kolesnik.program_1.homework2;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,21 +12,20 @@ public class HtmlLoginServlet extends HttpServlet {
     HashMap<String, String> accounts = new HashMap<>();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         accounts.put(getServletConfig().getInitParameter("firstLogin"),
                 getServletConfig().getInitParameter("firstPassword"));
         accounts.put(getServletConfig().getInitParameter("secondLogin"),
                 getServletConfig().getInitParameter("secondPassword"));
         if(accounts.containsKey(name) && accounts.get(name).equals(password)) {
-            resp.addCookie(new Cookie("session", "true"));
-        } else {
-            resp.addCookie(new Cookie("session", "false"));
+            HttpSession session = req.getSession(true);
+            session.setAttribute("authorized", "true");
         }
-        resp.sendRedirect("http://localhost:8080/program_1_war/time");
+        resp.sendRedirect("/program_1_war/timeInMinsk");
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         name = req.getParameter("username");
         password = req.getParameter("password");
         this.doGet(req, resp);

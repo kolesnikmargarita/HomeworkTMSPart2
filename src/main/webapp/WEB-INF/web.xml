@@ -12,6 +12,7 @@
   <servlet>
     <servlet-name>TimeServlet</servlet-name>
     <servlet-class>by.kolesnik.program_1.homework1.task1.TimeServlet</servlet-class>
+    <!--jsp-file>/jsp/time.jsp</jsp-file-->
   </servlet>
   <servlet>
     <servlet-name>NameServlet</servlet-name>
