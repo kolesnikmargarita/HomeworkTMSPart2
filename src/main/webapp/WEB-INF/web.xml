@@ -73,7 +73,7 @@
   </servlet-mapping>
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>
-    <url-pattern>/time</url-pattern>
+    <url-pattern>/timeInMinsk</url-pattern>
   </filter-mapping>
 
 </web-app>

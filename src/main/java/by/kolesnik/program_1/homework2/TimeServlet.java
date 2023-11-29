@@ -17,7 +17,6 @@ public class TimeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        //ZoneId zoneId = ZoneId.of(req.getParameter("zone") == null ? "Europe/Minsk" : req.getParameter("zone"));
         getServletContext().getRequestDispatcher("/jsp/time.jsp").forward(req, resp);
     }
 
