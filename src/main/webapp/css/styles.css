@@ -1,0 +1,33 @@
+/*div {*/
+/*    border: 1px red none; !* `border: 1px red none` to make visible *!*/
+/*}*/
+
+.visible-border {
+    color: yellow;
+    background: linear-gradient(#2639fa, #c9d1ff);
+    border: none;
+    font-family: Cambria, serif;
+}
+
+.card {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.name {
+    font-family: Cambria, serif;
+    color: azure;
+}
+
+body {
+    background: url(../img/3.jpg);
+}
+
+h1 {
+    color: yellow;
+    font-family: Cambria, serif;
+}
+
+.container-md {
+    margin-bottom: 25px;
+}
