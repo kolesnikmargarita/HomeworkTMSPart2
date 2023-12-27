@@ -1,4 +1,4 @@
-package by.kolesnik.program_1;
+package by.kolesnik.program_1.homework1.task1;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-public class HelloWorldServlet extends HttpServlet {
+public class TimeServlet extends HttpServlet {
 
 
     @Override
