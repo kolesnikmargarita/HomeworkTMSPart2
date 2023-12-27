@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        <%@include file="css/login.css"%>
+        <%@include file="../css/login.css"%>
     </style>
 </head>
 <body>
@@ -24,6 +24,6 @@
         <input id="enter" type="submit">
     </div>
 </form>
-<img src=img/1.jpg alt="not found" width="400" height="400"/>
+<img src=../img/1.jpg alt="not found" width="400" height="400"/>
 </body>
 </html>
